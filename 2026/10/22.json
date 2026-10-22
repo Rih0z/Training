@@ -1,0 +1,1218 @@
+{
+  "meta": {
+    "title": "筋肉バランス強化＋ランニングトレーニングシステム（8セット制）",
+    "format_version": 2,
+    "updated": "2026-10-22",
+    "last_session": 62,
+    "language": "日本語"
+  },
+  "next_template": {
+    "note": "会話のたびに冒頭で自動出力。コピペ用のためコードブロックで出す。",
+    "text": "【トレーニング記録】\n\nセット3\n- ケーブルインクラインプレス：50lb × 12回 × 3セット\n- ケーブルシーテッドロウ：120lb × 12回 × 3セット\n- ケーブルカール：70lb × 12回 × 3セット\n\n【ランニング】\nタイプ：高強度（1日目）\n基準速度：速い10.3mph／遅い6.3mph（30秒／90秒交互）\n実施速度：速い　　mph／遅い　　mph\n\n【体重】\n　　kg"
+  },
+  "rules": {
+    "output": [
+      "記録を送ると分析・更新し、結果はこのファイルと同じJSON形式でアーティファクト（JSONファイル）に出力する（ウィジェット・HTML禁止）。（2026-10-14改訂：MDからJSONへ変更）",
+      "（2026-10-15追加・厳守）出力は必ずアーティファクトとして出力する。チャット本文だけで済ませない。更新のたびに、更新後のドキュメント全体を新しいアーティファクトとして作る。",
+      "次回分のテンプレートも同じアーティファクト内（next_template）に含める。",
+      "コピペ項目は必ずコードブロック、出力言語は常に日本語。",
+      "（2026-10-15改訂・厳守）チャット本文にはドキュメント全体を貼らず、次回テンプレートのみコードブロックで出す。ドキュメント全体はアーティファクトで渡す。（2026-09-17追加の「チャット本文に全体を出力」ルールを置き換え）"
+    ],
+    "weight_reps": [
+      "（2026-08-25改訂・厳守）次回テンプレートの各種目には前回使用した重量・回数を最初から埋めた状態で出力する（空欄にしない）。",
+      "重量は自動では増量しない。",
+      "セット数は固定で「3セット」と記載する。"
+    ],
+    "date": [
+      "（2026-08-18追加・厳守）テンプレートに日付欄は設けない。ユーザーに日付を入力させない。",
+      "記録が送信された日を自動的にその記録の日付として登録する。"
+    ],
+    "running": [
+      "（2026-09-16改訂・厳守）速度表記はmphのみ（km/h併記は廃止）。",
+      "距離の記載は行わない。",
+      "速い速度（30秒）／遅い速度（90秒）を交互に繰り返すインターバル構成で統一。",
+      "ユーザーが基準値より速い速度で実施した場合、その速度を以後の基準速度として自動更新する。",
+      "日タイプは3日サイクル（高強度1日→低強度2日）で管理。"
+    ],
+    "video_notes": [
+      "（2026-10-14追加・厳守）種目のYouTube動画を調べたら、そのURLをその種目のvideo欄に保存する。",
+      "ユーザーに動画を聞かれたら、再検索せずvideo欄から即座に出す。video欄が空の種目のみ新たに検索して保存する。",
+      "完全一致の動画が無い場合は match に「近似（理由）」を記載する。動画の中身は未確認で、タイトル・説明文に基づく旨を必要に応じて伝える。"
+    ],
+    "preserved_unchanged": "セット構成表の保持／表示ルール／機材アップデート／種目変更（2026-08-18・2026-08-13・2026-09-03・2026-09-11の各記載）は変更なし、保持。"
+  },
+  "running": {
+    "baseline_date": "2026-10-20",
+    "baseline_note": "10/20に速い10.3mph／遅い6.3mphで実施。基準値と同じのため基準速度は更新なし",
+    "baseline_fast_mph": 10.3,
+    "baseline_slow_mph": 6.3,
+    "interval": "30秒／90秒交互",
+    "next_type": "高強度（1日目）",
+    "cycle_log": [
+      {
+        "date": "2026-10-12",
+        "type": "高強度（サイクル再起点の想定）",
+        "result": "実施速度が未入力のため記録なし",
+        "note": "サイクルは進めず据え置き",
+        "issue": 22
+      },
+      {
+        "date": "2026-10-13",
+        "type": "高強度（サイクル再起点の想定）",
+        "result": "実施速度が2回連続で未入力のため記録なし",
+        "note": "サイクルは進めず据え置き",
+        "issue": 22
+      },
+      {
+        "date": "2026-10-14",
+        "type": "高強度（サイクル再起点の想定）",
+        "result": "実施速度が3回連続で未入力のため記録なし",
+        "note": "サイクルは進めず、次回も高強度（再起点）想定で据え置き",
+        "issue": 22
+      },
+      {
+        "date": "2026-10-15",
+        "type": "高強度（サイクル再起点）",
+        "result": "速い10.3mph／遅い6.3mphで実施",
+        "note": "基準値と同じ。再起点の高強度を完了したため、次回は低強度（1日目）へ進める",
+        "issue": 22
+      },
+      {
+        "date": "2026-10-16",
+        "type": "低強度（1日目）",
+        "result": "速い10.3mph／遅い6.3mphで実施",
+        "note": "基準値と同じ。基準速度は更新なし。次回は低強度（2日目）"
+      },
+      {
+        "date": "2026-10-19",
+        "type": "低強度（2日目）",
+        "result": "実施速度が未入力のため記録なし",
+        "note": "サイクルは進めず、次回も低強度（2日目）で据え置き。基準速度は更新なし",
+        "issue": 25
+      },
+      {
+        "date": "2026-10-20",
+        "type": "低強度（2日目）",
+        "result": "速い10.3mph／遅い6.3mphで実施",
+        "note": "基準値と同じ。基準速度は更新なし。低強度2日を完了したため、次回は高強度（1日目）へ進める",
+        "issue": 25
+      },
+      {
+        "date": "2026-10-22",
+        "type": "高強度（1日目）",
+        "result": "実施速度が未入力のため記録なし",
+        "note": "サイクルは進めず、次回も高強度（1日目）で据え置き。基準速度は更新なし",
+        "issue": 26
+      },
+      {
+        "date": "2026-10-22",
+        "type": "高強度（1日目）",
+        "result": "実施速度が2回連続で未入力のため記録なし（同日2回目の送信）",
+        "note": "サイクルは進めず、次回も高強度（1日目）で据え置き。基準速度は更新なし",
+        "issue": 26
+      }
+    ]
+  },
+  "body": {
+    "usual_range_kg": [
+      65.5,
+      66.0
+    ],
+    "latest": {
+      "date": "2026-10-22",
+      "weight_kg": 64.5
+    },
+    "trend": "同日の前回測定64.8kgから-0.3kg。10/15の64.5kgと並ぶ最低値タイ。10/12の68.35kgからは-3.85kg、従来のレンジ下限（65.5kg）は1.0kg下回る（issue 17参照）",
+    "weight_log": [
+      {
+        "date": "2026-10-12",
+        "weight_kg": 68.35,
+        "note": "9/25の65.6kgから+2.75kg。ブランク明けの初回測定"
+      },
+      {
+        "date": "2026-10-13",
+        "weight_kg": 66.6,
+        "note": "10/12の68.35kgから-1.75kg。従来レンジよりやや高め"
+      },
+      {
+        "date": "2026-10-14",
+        "weight_kg": 65.1,
+        "note": "10/13の66.6kgから-1.5kg。従来レンジをやや下回る"
+      },
+      {
+        "date": "2026-10-15",
+        "weight_kg": 64.5,
+        "note": "10/14の65.1kgから-0.6kg。従来レンジ下限を1.0kg下回る。4日連続で低下"
+      },
+      {
+        "date": "2026-10-16",
+        "weight_kg": 64.95,
+        "note": "10/15の64.5kgから+0.45kg。低下は止まり微増。従来レンジ下限を0.55kg下回る"
+      },
+      {
+        "date": "2026-10-19",
+        "weight_kg": 65.3,
+        "note": "10/16の64.95kgから+0.35kg（3日ぶりの測定）。従来レンジ下限を0.2kg下回る"
+      },
+      {
+        "date": "2026-10-20",
+        "weight_kg": 65.2,
+        "note": "10/19の65.3kgから-0.1kg。ほぼ横ばい。従来レンジ下限を0.3kg下回る"
+      },
+      {
+        "date": "2026-10-22",
+        "weight_kg": 64.8,
+        "note": "10/20の65.2kgから-0.4kg（2日ぶりの測定）。従来レンジ下限を0.7kg下回る"
+      },
+      {
+        "date": "2026-10-22",
+        "weight_kg": 64.5,
+        "note": "同日の前回測定64.8kgから-0.3kg（同日2回目の送信）。10/15の64.5kgと並ぶ最低値。従来レンジ下限を1.0kg下回る。測定タイミングが違う可能性あり"
+      }
+    ]
+  },
+  "sets": {
+    "1": {
+      "muscles": "胸・三頭・体幹",
+      "last_date": "2026-10-22",
+      "exercises": [
+        {
+          "name": "ケーブルチェストプレス",
+          "weight_lbs": 45,
+          "reps": 12,
+          "sets": 3,
+          "status": "確定傾向",
+          "memo": "",
+          "video": {
+            "match": "一致（スタンディング版が中心。座り版はショート動画。タイトル・説明文に基づく。動画の中身は未確認）",
+            "links": [
+              {
+                "title": "How To Do Standing Cable Chest Press",
+                "url": "https://www.youtube.com/watch?v=u74FbPhR8iE",
+                "note": "スタンディング版の基本"
+              },
+              {
+                "title": "Standing Cable Chest Press - Technique, Benefits, and Common Mistakes",
+                "url": "https://www.youtube.com/watch?v=fOHouR0t9Cw",
+                "note": "フォームとよくあるミス"
+              },
+              {
+                "title": "How to do Seated Cable Chest Press",
+                "url": "https://www.youtube.com/shorts/iKYPiaXzE6Q",
+                "note": "座り版（ショート）"
+              }
+            ]
+          }
+        },
+        {
+          "name": "ケーブルトライセプスプッシュダウン",
+          "weight_lbs": 90,
+          "reps": 12,
+          "sets": 3,
+          "status": "確定傾向",
+          "memo": "",
+          "video": {
+            "match": "一致（タイトル・説明文に基づく。動画の中身は未確認）",
+            "links": [
+              {
+                "title": "Master the Cable Tricep Pushdown: Tips for Perfect Form and Maximum Gains",
+                "url": "https://www.youtube.com/watch?v=odbyvJm7d8s",
+                "note": "フォームの総合解説"
+              },
+              {
+                "title": "How to Do Tricep Pushdowns with a Rope (Step-by-Step Breakdown)",
+                "url": "https://www.youtube.com/watch?v=vPeQu_L-1n0",
+                "note": "ロープ版"
+              }
+            ]
+          }
+        },
+        {
+          "name": "ケーブルクランチ",
+          "weight_lbs": 120,
+          "reps": 12,
+          "sets": 3,
+          "status": "確定傾向",
+          "memo": "",
+          "video": {
+            "match": "一致（ニーリング＝膝立ち版。タイトル・説明文に基づく。動画の中身は未確認）",
+            "links": [
+              {
+                "title": "Exercise Tutorial: Kneeling Cable Crunch",
+                "url": "https://www.youtube.com/watch?v=0KEP6A1deBE",
+                "note": "ロープを使った基本の動き"
+              },
+              {
+                "title": "Kneeling Cable Crunch Tutorial: Maximize Core Activation & Muscle Growth",
+                "url": "https://www.youtube.com/watch?v=DRL93IPIcRM",
+                "note": "フォームとよくあるミス"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "2": {
+      "muscles": "脚・ハム・前腕",
+      "last_date": "2026-10-22",
+      "exercises": [
+        {
+          "name": "ダンベルスクワット",
+          "weight_lbs": 50,
+          "reps": 12,
+          "sets": 3,
+          "status": "上限",
+          "memo": "",
+          "video": {
+            "match": "近似（ダンベル1個を胸の前で持つゴブレットスクワットの動画。実際のダンベルの持ち方が違う場合は要確認）",
+            "links": [
+              {
+                "title": "The Goblet Squat",
+                "url": "https://www.youtube.com/watch?v=sRoJxNrfykI",
+                "note": "基本のやり方"
+              },
+              {
+                "title": "Dumbbell Goblet Squat: Correct Form & Common Mistakes",
+                "url": "https://www.youtube.com/watch?v=zsN2WvklwDk",
+                "note": "スタンス・深さ・よくあるミス"
+              }
+            ]
+          }
+        },
+        {
+          "name": "ケーブルRDL／プルスルー",
+          "weight_lbs": 110,
+          "reps": 12,
+          "sets": 3,
+          "status": "要確認",
+          "memo": "issue 27（70lb→110lbに増量）",
+          "video": {
+            "match": "一致（RDLとプルスルーを1本ずつ。タイトル・説明文に基づく。動画の中身は未確認）",
+            "links": [
+              {
+                "title": "Cable Double Leg Romanian Deadlift (RDL) or Hinged Deadlift",
+                "url": "https://www.youtube.com/watch?v=1eu-x_DpoVI",
+                "note": "RDL版（ハンドル2本）"
+              },
+              {
+                "title": "How to Do Cable Pull Throughs",
+                "url": "https://www.youtube.com/watch?v=4oZ_0_bQcOg",
+                "note": "プルスルー版"
+              },
+              {
+                "title": "Cable Pull Through: Build Strong Glutes & Hamstrings Fast",
+                "url": "https://www.youtube.com/watch?v=RPLdvNn0TK8",
+                "note": "プルスルーのフォームとミス"
+              }
+            ]
+          }
+        },
+        {
+          "name": "ケーブルリストカール",
+          "weight_lbs": 60,
+          "reps": 8,
+          "sets": 3,
+          "status": "要確認",
+          "rotated": true,
+          "memo": "issue 27（10/22は60lb×8回。重量110lbは入力ミスで訂正済み。回数8回は要確認）",
+          "video": {
+            "match": "一致（説明文に基づく。動画の中身は未確認。このほかにケーブルのリストカール単独の解説動画は検索で見つからず）",
+            "links": [
+              {
+                "title": "How to Cable Forearm Curls: Build Stronger Forearms and Grip",
+                "url": "https://www.youtube.com/watch?v=u7mWx_FlGx0",
+                "note": "手首の屈曲（前腕の内側）を狙う基本フォーム"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "3": {
+      "muscles": "胸・背中・二頭",
+      "last_date": "2026-10-13",
+      "exercises": [
+        {
+          "name": "ケーブルインクラインプレス",
+          "weight_lbs": 50,
+          "reps": 12,
+          "sets": 3,
+          "status": "要確認",
+          "rotated": true,
+          "memo": "",
+          "video": {
+            "match": "近似（立って行うスタンディング版。ベンチを使うシーテッド版の動画は検索で見つからず）",
+            "links": [
+              {
+                "title": "STANDING INCLINE CABLE PRESS",
+                "url": "https://www.youtube.com/watch?v=5fk8aieTplg",
+                "note": "上部胸への刺激を狙う立ち版"
+              }
+            ]
+          }
+        },
+        {
+          "name": "ケーブルシーテッドロウ",
+          "weight_lbs": 120,
+          "reps": 12,
+          "sets": 3,
+          "status": "要確認",
+          "rotated": true,
+          "memo": "",
+          "video": {
+            "match": "一致（タイトル・説明文に基づく。動画の中身は未確認）",
+            "links": [
+              {
+                "title": "How to Do a Seated Cable Row",
+                "url": "https://www.youtube.com/watch?v=f_r95UajQcg",
+                "note": "セットアップから解説"
+              },
+              {
+                "title": "Seated Cable Row Tutorial: Build a Strong Back with Proper Form",
+                "url": "https://www.youtube.com/watch?v=OeLb503NZHk",
+                "note": "デュアルケーブル＋バー1本の場合"
+              }
+            ]
+          }
+        },
+        {
+          "name": "ケーブルカール",
+          "weight_lbs": 70,
+          "reps": 12,
+          "sets": 3,
+          "status": "要確認",
+          "rotated": true,
+          "memo": "issue 23",
+          "video": {
+            "match": "一致（タイトル・説明文に基づく。動画の中身は未確認）",
+            "links": [
+              {
+                "title": "How to do a Cable Bicep Curl",
+                "url": "https://www.youtube.com/watch?v=C68nhss07U8",
+                "note": "基本の手順"
+              },
+              {
+                "title": "How To Do Cable Bicep Curls - Full Video Tutorial and Step-by-Step Guide",
+                "url": "https://www.youtube.com/watch?v=NFzTWp2qpiE",
+                "note": "セットアップとフォームのミス"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "4": {
+      "muscles": "全身・二頭・体幹",
+      "last_date": "2026-10-14",
+      "exercises": [
+        {
+          "name": "ケーブルスラスター",
+          "weight_lbs": 50,
+          "reps": 12,
+          "sets": 3,
+          "status": "要確認",
+          "memo": "初期位置はケーブル最下段（ローポジション）。マシンに背を向けて少し前に立ち、ハンドルを肩の前（フロントラック位置）で持つ。スクワットの底から立ち上がる勢いでそのまま頭上へプレス。前傾しやすいので胸を張って体幹を締める。",
+          "video": {
+            "match": "近似（ケーブル版は見つからず。動きはスクワット→オーバーヘッドプレスで同じ）",
+            "links": [
+              {
+                "title": "The Dumbbell Thruster",
+                "url": "https://www.youtube.com/watch?v=u3wKkZjE8QM",
+                "note": "ダンベル版"
+              },
+              {
+                "title": "How to do a Thruster",
+                "url": "https://www.youtube.com/watch?v=Du8BNnqWakM",
+                "note": "基本の動き"
+              }
+            ]
+          }
+        },
+        {
+          "name": "ケーブルロープハンマーカール",
+          "weight_lbs": 100,
+          "reps": 12,
+          "sets": 3,
+          "status": "要確認",
+          "memo": "",
+          "video": {
+            "match": "一致",
+            "links": [
+              {
+                "title": "Cable Rope Hammer Curl",
+                "url": "https://www.youtube.com/watch?v=mGR-KmEIaQk",
+                "note": ""
+              },
+              {
+                "title": "How To: Cable Hammer Curl",
+                "url": "https://www.youtube.com/watch?v=vsarApmqJmo",
+                "note": "ロープ版を紹介"
+              }
+            ]
+          }
+        },
+        {
+          "name": "ケーブルプランクロウ",
+          "weight_lbs": 55,
+          "reps": 12,
+          "sets": 3,
+          "status": "要確認",
+          "memo": "",
+          "video": {
+            "match": "一致",
+            "links": [
+              {
+                "title": "Plank Cable Row",
+                "url": "https://www.youtube.com/watch?v=1eRyBDGaJQ0",
+                "note": "プランクの姿勢から片手でケーブルを引く"
+              },
+              {
+                "title": "High Plank Cable Row",
+                "url": "https://www.youtube.com/watch?v=wDg71sR9_gc",
+                "note": "ハイプランク版"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "5": {
+      "muscles": "肩・体幹・ふくらはぎ",
+      "last_date": "2026-10-15",
+      "exercises": [
+        {
+          "name": "ケーブルショルダープレス",
+          "weight_lbs": 50,
+          "reps": 12,
+          "sets": 3,
+          "status": "要確認",
+          "rotated": true,
+          "memo": "",
+          "video": {
+            "match": "一致",
+            "links": [
+              {
+                "title": "How to Perform Cable Shoulder Press (Improve Shoulder Health)",
+                "url": "https://www.youtube.com/watch?v=fBTGwHChaf4",
+                "note": "基本フォームの解説"
+              },
+              {
+                "title": "Cable Shoulder Press (Exercises.com.au)",
+                "url": "https://www.youtube.com/watch?v=eKJbsbcwOsk",
+                "note": "デモ"
+              }
+            ]
+          }
+        },
+        {
+          "name": "ケーブルパロフプレス",
+          "weight_lbs": 55,
+          "reps": 12,
+          "sets": 3,
+          "status": "要確認",
+          "rotated": true,
+          "memo": "",
+          "video": {
+            "match": "一致",
+            "links": [
+              {
+                "title": "Cable Pallof Press",
+                "url": "https://www.youtube.com/watch?v=xeFp4MXad98",
+                "note": "ケーブル版のショート解説"
+              },
+              {
+                "title": "How to Do the Pallof Press (Perfect Form for a Stronger Core)",
+                "url": "https://www.youtube.com/watch?v=_2xWmYNnFS8",
+                "note": "フォーム解説（バンド・ケーブル共通）"
+              }
+            ]
+          }
+        },
+        {
+          "name": "ダンベルスタンディングカーフレイズ",
+          "weight_lbs": 50,
+          "reps": 20,
+          "sets": 3,
+          "status": "上限",
+          "memo": "",
+          "video": {
+            "match": "一致",
+            "links": [
+              {
+                "title": "Standing Dumbbell Calf Raises (Bodybuilding.com)",
+                "url": "https://www.youtube.com/watch?v=wxwY7GXxL4k",
+                "note": "デモ"
+              },
+              {
+                "title": "Dumbbell Standing Calf Raises",
+                "url": "https://www.youtube.com/watch?v=H6WptvjXkgw",
+                "note": "セットアップから解説"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "6": {
+      "muscles": "三頭・肩・前腕",
+      "last_date": "2026-10-16",
+      "exercises": [
+        {
+          "name": "ケーブルオーバーヘッドトライセプスエクステンション",
+          "weight_lbs": 80,
+          "reps": 12,
+          "sets": 3,
+          "status": "要確認",
+          "memo": "issue 24",
+          "video": {
+            "match": "一致（ロープ版。タイトル・説明文に基づく。動画の中身は未確認）",
+            "links": [
+              {
+                "title": "Cable Rope Overhead Tricep Extension - Tricep Exercise - Bodybuilding.com",
+                "url": "https://www.youtube.com/watch?v=mRozZKkGIfg",
+                "note": "ロープ版のデモ"
+              },
+              {
+                "title": "Overhead Cable Rope Tricep Extension | Build Bigger & Stronger Triceps - High Pulley",
+                "url": "https://www.youtube.com/watch?v=5omUbPIsP2Y",
+                "note": "ハイプーリー版"
+              }
+            ]
+          }
+        },
+        {
+          "name": "ケーブルサイドレイズ",
+          "weight_lbs": 30,
+          "reps": 12,
+          "sets": 3,
+          "status": "要確認",
+          "memo": "",
+          "video": {
+            "match": "一致（タイトル・説明文に基づく。動画の中身は未確認）",
+            "links": [
+              {
+                "title": "Cable Lateral Raise",
+                "url": "https://www.youtube.com/watch?v=zpbm-xRHB6k",
+                "note": "側部三角筋を狙う基本フォーム"
+              },
+              {
+                "title": "How To Do Cable Lateral Raise",
+                "url": "https://www.youtube.com/watch?v=0u-uGNREK5A",
+                "note": "正しいフォームのデモ"
+              }
+            ]
+          }
+        },
+        {
+          "name": "ケーブルリバースリストカール",
+          "weight_lbs": 55,
+          "reps": 12,
+          "sets": 3,
+          "status": "要確認",
+          "memo": "",
+          "video": {
+            "match": "一致（説明文に基づく。動画の中身は未確認）",
+            "links": [
+              {
+                "title": "FOREARMS (EXTENSORS) - Cable Reverse Wrist Curls With Straight Handle",
+                "url": "https://www.youtube.com/watch?v=xttdQljIKf4",
+                "note": "ページ上のタイトルはLoop Handleだが、説明文はStraight Handle表記。ハンドル種類は要確認"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "7": {
+      "muscles": "臀筋・脚・僧帽筋",
+      "last_date": "2026-10-19",
+      "exercises": [
+        {
+          "name": "ダンベルウォーキングランジ",
+          "weight_lbs": 35,
+          "reps": 12,
+          "sets": 3,
+          "status": "確定",
+          "memo": "",
+          "video": {
+            "match": "一致（タイトル・説明文に基づく。動画の中身は未確認）",
+            "links": [
+              {
+                "title": "How to do Dumbbell walking Lunge",
+                "url": "https://www.youtube.com/watch?v=6GgXWvtWocc",
+                "note": "姿勢と足の運びの基本"
+              },
+              {
+                "title": "Walking Dumbbell Lunges for beginners",
+                "url": "https://www.youtube.com/shorts/Rkkc-FnURyc",
+                "note": "初心者向け（ショート）"
+              }
+            ]
+          }
+        },
+        {
+          "name": "ダンベルヒップスラスト",
+          "weight_lbs": 45,
+          "reps": 12,
+          "sets": 3,
+          "status": "確定",
+          "memo": "",
+          "video": {
+            "match": "一致（ベンチを使う版。タイトル・説明文に基づく。動画の中身は未確認）",
+            "links": [
+              {
+                "title": "Dumbbell Hip Thrust (Bench)",
+                "url": "https://www.youtube.com/watch?v=rrylL1KKItA",
+                "note": "ベンチのセットアップから解説"
+              },
+              {
+                "title": "How To Do A Dumbbell Hip Thrust",
+                "url": "https://www.youtube.com/watch?v=ETnhBWeWK74",
+                "note": "バーベル無しで負荷を足す方法"
+              }
+            ]
+          }
+        },
+        {
+          "name": "ケーブルシュラッグ",
+          "weight_lbs": 120,
+          "reps": 12,
+          "sets": 3,
+          "status": "要確認",
+          "memo": "issue 9。10/19は3セットで実施（前回は4セット）",
+          "video": {
+            "match": "近似（ケーブルシュラッグの動画。ハンドル種類・握り幅は実際の方法と違う可能性あり。説明文に基づく）",
+            "links": [
+              {
+                "title": "Standing Cable Shrug",
+                "url": "https://www.youtube.com/watch?v=DikTH1KiLqY",
+                "note": "クロスオーバーマシンの最下段で行う基本形"
+              },
+              {
+                "title": "How To Do The Wide Grip Cable Shrug Exercise",
+                "url": "https://www.youtube.com/watch?v=uosD0RorSpY",
+                "note": "ワイドグリップ版"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "8": {
+      "muscles": "後面全身・腹斜筋",
+      "last_date": "2026-10-20",
+      "exercises": [
+        {
+          "name": "ケーブルデッドリフト",
+          "weight_lbs": 120,
+          "reps": 12,
+          "sets": 3,
+          "status": "要確認",
+          "rotated": true,
+          "memo": "issue 18",
+          "video": {
+            "match": "一致（ストレートバー版。タイトル・説明文に基づく。動画の中身は未確認）",
+            "links": [
+              {
+                "title": "How To Perform A Cable Deadlift",
+                "url": "https://www.youtube.com/watch?v=fQgETZz9E1c",
+                "note": "最下段のプーリーで行うスティッフレッグ寄りの動き"
+              },
+              {
+                "title": "Cable Double Leg Romanian Deadlift (RDL) or Hinged Deadlift",
+                "url": "https://www.youtube.com/watch?v=1eu-x_DpoVI",
+                "note": "ハンドル2本の場合の参考"
+              }
+            ]
+          }
+        },
+        {
+          "name": "ケーブルウッドチョッパー",
+          "weight_lbs": 60,
+          "reps": 12,
+          "sets": 3,
+          "status": "要確認",
+          "rotated": true,
+          "memo": "issue 18",
+          "video": {
+            "match": "一致（タイトル・説明文に基づく。動画の中身は未確認）",
+            "links": [
+              {
+                "title": "How to perform a Cable Wood Chop",
+                "url": "https://www.youtube.com/watch?v=PCQCwP1Xy0g",
+                "note": "ハイポジションから斜めに引き下ろす基本形"
+              },
+              {
+                "title": "How To Do A STANDING CABLE WOODCHOPPER",
+                "url": "https://www.youtube.com/watch?v=he4IhLc1d5k",
+                "note": "腹斜筋を狙う解説"
+              }
+            ]
+          }
+        },
+        {
+          "name": "ケーブルグッドモーニング",
+          "weight_lbs": 110,
+          "reps": 12,
+          "sets": 3,
+          "status": "要確認",
+          "rotated": true,
+          "memo": "issue 18",
+          "video": {
+            "match": "近似（座って行うシーテッド版のみ見つかった。立って行うケーブルグッドモーニングの動画は検索で見つからず。説明文に基づく）",
+            "links": [
+              {
+                "title": "Seated Cable Stack Good Morning",
+                "url": "https://www.youtube.com/watch?v=vogVz_z4vi4",
+                "note": "座り版。股関節から折る動きの参考"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "open_issues": [
+    {
+      "id": "1-8",
+      "title": "（変更なし、旧ドキュメントのまま保持）",
+      "status": "保持",
+      "detail": "内容は旧ドキュメントから変更なし。原文が手元にないため、必要なら貼り付けて追記する。"
+    },
+    {
+      "id": 9,
+      "title": "セット7「ケーブルシュラッグ」の重量・セット数がさらに上振れ",
+      "priority": "重要",
+      "updated": "2026-10-19",
+      "detail": "初回目安（55lb・12回）→1回目実施（2026-09-10：120lb×10回×3セット）→2回目実施（2026-09-23：120lb×12回×4セット）と、重量は120lbで変わらない一方、回数が10回→12回、セット数が3→4に増加。セット3のケーブルシーテッドロウと同様のパターン（セット数の増加）が見られる。 2026-10-19の3回目実施は120lb×12回×3セットで、セット数は4→3に戻った。ただし送信内容が次回テンプレートと完全に同一だったため、テンプレートを書き換えずに送った可能性もある。",
+      "questions": [
+        "10/19は実際に3セットで実施したのか、それともテンプレートを変更せずに送ったのか（実際は4セットだった可能性）",
+        "首・僧帽筋に張りや違和感が無いか",
+        "今後セット7の3種目目は3セット・4セットのどちらで運用するか"
+      ],
+      "recommendation": "3セットで実施していたなら、問題なければ120lb×12回×3セットで確定に向けて様子を見る。4セットで実施していた場合は教えてください。"
+    },
+    {
+      "id": "10-16",
+      "title": "（変更なし、旧ドキュメントのまま保持）",
+      "status": "保持",
+      "detail": "内容は旧ドキュメントから変更なし。原文が手元にないため、必要なら貼り付けて追記する。"
+    },
+    {
+      "id": 17,
+      "title": "体重の推移（68.35kg→66.6kg→65.1kg→64.5kg→64.95kg→65.3kg→65.2kg→64.8kg→64.5kg）",
+      "priority": "通常",
+      "updated": "2026-10-22",
+      "detail": "同日の前回測定64.8kgから今回は64.5kgへ-0.3kg（同日2回目の送信）。10/15の64.5kgと並ぶ最低値。従来のレンジ（65.5〜66.0kg）の下限からは-1.0kg、10/12の68.35kgからは-3.85kg。64.5〜65.3kgの幅で推移しており、新しい通常レンジになるかが焦点。",
+      "questions": [
+        "今回の測定条件はこれまでと同じか（起床後・排尿後・食前など）。同日に2回測っているなら、タイミングの違いが影響していないか",
+        "10/12の上振れは食事・水分・塩分などの一時的な影響だったか",
+        "食事量や睡眠、体調に最近変化は無いか",
+        "次回以降も64〜65kg前後で推移するか（数回の推移を見て、新しい通常レンジに更新するか判断）"
+      ]
+    },
+    {
+      "id": 18,
+      "title": "セット8（ケーブルデッドリフト／ウッドチョッパー／グッドモーニング）の重量変動：デッドリフトが100lb→120lbに増量",
+      "priority": "重要",
+      "updated": "2026-10-20",
+      "detail": "ケーブルデッドリフト：140lb→100lb（9/24）→120lb（10/20、20lb増・約20%）／ケーブルウッドチョッパー：50lb→60lb（9/24）→60lb（10/20、変更なし）／ケーブルグッドモーニング：80lb→110lb（9/24）→110lb（10/20、変更なし）。10/20は約3.5週間ぶりのセット8実施。",
+      "questions": [
+        "デッドリフトの20lb増量は意図的な変更か、入力の誤りでないか",
+        "フォームを保ったまま12回×3セットを完遂できたか（背中が丸まる、腰が反るなどが無いか）",
+        "腰・背中・ハムストリングスに張りや違和感が無いか（グッドモーニング110lbと合わせて腰への負荷が大きい）"
+      ],
+      "recommendation": "問題なければ次回もデッドリフト120lb・ウッドチョッパー60lb・グッドモーニング110lbで確定に向けて様子を見る。違和感やフォームの崩れがあれば、次回はデッドリフトを100lbに戻して再テスト。"
+    },
+    {
+      "id": 21,
+      "title": "セット2「ケーブルRDL／プルスルー」「ケーブルリストカール」の重量が増加",
+      "priority": "通常",
+      "updated": "2026-10-22",
+      "detail": "ケーブルRDL／プルスルー：60lb（確定）→70lb（10/12、10lb増）／ケーブルリストカール：55lb→60lb（10/12、5lb増）／ダンベルスクワット：50lb（上限）で変更なし。2026-10-22の実施でさらに大幅増量となったため、以後の経過はissue 27で追跡。",
+      "questions": [
+        "約2.5週間のブランク明けでの増量だが、フォームを保ったまま12回×3セットを完遂できたか",
+        "RDLで腰・ハムストリングスに張りや違和感が無いか（セット8のデッドリフト系と合わせて腰への負荷が続くため）",
+        "増量は意図的な変更か、入力の誤りでないか"
+      ],
+      "recommendation": "10/22の大幅増量はissue 27を参照。"
+    },
+    {
+      "id": 23,
+      "title": "セット3「ケーブルカール」の重量が大幅に増加",
+      "priority": "重要",
+      "updated": "2026-10-13",
+      "detail": "ケーブルカール：45lb→70lb（25lb増）／ケーブルインクラインプレス：50lb（変更なし）／ケーブルシーテッドロウ：120lb（変更なし）",
+      "questions": [
+        "25lb（約55%）の増量は意図的な変更か、入力の誤り（例：ロープハンマーカールの100lbとの取り違えなど）の可能性がないか",
+        "反動や上体の振りを使わずに、12回×3セットを完遂できたか",
+        "肘・上腕二頭筋の付け根に張りや違和感が無いか"
+      ],
+      "recommendation": "問題なければこのまま様子を見る。違和感やフォームの崩れがあれば、次回は50〜55lb程度・3セットで再テスト。"
+    },
+    {
+      "id": 24,
+      "title": "セット6「ケーブルオーバーヘッドトライセプスエクステンション」の重量が増加",
+      "priority": "通常",
+      "updated": "2026-10-16",
+      "detail": "ケーブルオーバーヘッドトライセプスエクステンション：70lb（確定）→80lb（10lb増、約14%）／ケーブルサイドレイズ：30lb（変更なし）／ケーブルリバースリストカール：55lb（変更なし）。前回のセット6実施は9/22で、約3.5週間ぶり。",
+      "questions": [
+        "フォームを保ったまま12回×3セットを完遂できたか（肘が開く、腰が反るなどが無いか）",
+        "肘・肩（オーバーヘッドの姿勢）に張りや違和感が無いか",
+        "増量は意図的な変更か、入力の誤りでないか"
+      ],
+      "recommendation": "問題なければ次回も80lbで様子を見て確定に向ける。違和感やフォームの崩れがあれば、次回は元の70lbで再テスト。"
+    },
+    {
+      "id": 26,
+      "title": "ランニングの実施速度が未入力（高強度1日目）：2回連続",
+      "priority": "通常",
+      "updated": "2026-10-22",
+      "detail": "10/22のセット1の記録に続き、同日のセット2の記録でもランニングの実施速度欄が空欄のまま送信された（2回連続）。実施の有無が不明なため記録なしとし、サイクルは進めず次回も高強度（1日目）で据え置き。基準速度は10.3mph／6.3mphのまま更新なし。",
+      "questions": [
+        "10/22は実際にランニングを実施したか（実施した場合は速い／遅いの速度を教えてください）",
+        "実施していない場合、その理由（時間・体調・天候など）はあるか"
+      ],
+      "recommendation": "実施していたなら速度を教えてください。その場合、高強度（1日目）として記録し、次回を低強度（1日目）に進めます。"
+    },
+    {
+      "id": 27,
+      "title": "セット2「ケーブルRDL／プルスルー」の重量が大幅に増加／「ケーブルリストカール」の回数が減少",
+      "priority": "重要",
+      "updated": "2026-10-22",
+      "detail": "ケーブルRDL／プルスルー：70lb→110lb（40lb増・約57%、12回×3セット）／ケーブルリストカール：60lb×12回→60lb×8回（重量は同じ、回数のみ12→8回に減少）／ダンベルスクワット：50lb×12回×3セット（変更なし・上限）。リストカールの110lbは入力ミスで、ユーザー訂正により60lbに修正済み。RDLの110lbは訂正の申告が無いため実績として記録するが、同様の取り違え（セット8のグッドモーニング110lbなど）の可能性は残る。",
+      "questions": [
+        "RDLの110lbは意図的な増量か、リストカールと同様の入力ミスの可能性がないか",
+        "リストカールの8回は実際の回数か（12回の誤りでないか）。8回で止めた場合、限界だったためか",
+        "RDLで腰・ハムストリングスに張りや違和感が無いか（10/20のデッドリフト120lb・グッドモーニング110lbと合わせて腰への負荷が続いている）"
+      ],
+      "recommendation": "RDL110lbが意図的で違和感も無ければ、次回は同じ重量で様子を見る。入力ミスなら実際の重量を教えてください（次回は70lbに戻して再テスト）。リストカールは回数8回が正しければ60lb×8回で様子を見て、問題なければ12回を目指す。"
+    }
+  ],
+  "resolved_issues": [
+    {
+      "id": "（旧解決済み）",
+      "title": "（変更なし、旧ドキュメントのまま保持）",
+      "detail": "内容は旧ドキュメントから変更なし。"
+    },
+    {
+      "id": 19,
+      "title": "ランニングの実施記録が未入力 → 解決",
+      "resolved": "2026-09-24",
+      "detail": "低強度（1日目）で速い10.3mph／遅い6.3mphで実施。従来の基準値（10.1mph／6.1mph）を上回ったため、基準速度を10.3mph／6.3mphに更新。"
+    },
+    {
+      "id": 20,
+      "title": "セット1の重量が2回連続で一致 → 傾向確認",
+      "resolved": "2026-09-25",
+      "detail": "45lb／90lb／120lb×12回×3セットと、直前のテーブル値と完全に一致。重量・回数・セット数ともに安定しており、異常な変動なし。（2026-10-22の実施でも同じ値で一致、安定を再確認）"
+    },
+    {
+      "id": 22,
+      "title": "ランニングの実施速度が3回連続で未入力 → 解決",
+      "resolved": "2026-10-15",
+      "detail": "10/15に高強度（再起点）を速い10.3mph／遅い6.3mphで実施。基準値と同じのため基準速度は更新なし。サイクルは再起点から再開し、次回は低強度（1日目）。"
+    },
+    {
+      "id": 25,
+      "title": "ランニングの実施速度が未入力（低強度2日目） → 解決",
+      "resolved": "2026-10-20",
+      "detail": "10/20に低強度（2日目）を速い10.3mph／遅い6.3mphで実施。基準値と同じのため基準速度は更新なし。次回は高強度（1日目）。"
+    }
+  ],
+  "training_log": {
+    "note": "直近10回分のみ保持",
+    "records": [
+      {
+        "date": "2026-09-25",
+        "session": 53,
+        "set": 1,
+        "exercises": [
+          {
+            "name": "ケーブルチェストプレス",
+            "weight_lbs": 45,
+            "reps": 12,
+            "sets": 3,
+            "note": "前回と完全一致・安定"
+          },
+          {
+            "name": "ケーブルトライセプスプッシュダウン",
+            "weight_lbs": 90,
+            "reps": 12,
+            "sets": 3,
+            "note": "前回と完全一致・安定"
+          },
+          {
+            "name": "ケーブルクランチ",
+            "weight_lbs": 120,
+            "reps": 12,
+            "sets": 3,
+            "note": "前回と完全一致・安定"
+          }
+        ],
+        "note": "セット1の実施、異常な変動なし"
+      },
+      {
+        "date": "2026-10-12",
+        "session": 54,
+        "set": 2,
+        "exercises": [
+          {
+            "name": "ダンベルスクワット",
+            "weight_lbs": 50,
+            "reps": 12,
+            "sets": 3,
+            "note": "前回と同じ・上限"
+          },
+          {
+            "name": "ケーブルRDL／プルスルー",
+            "weight_lbs": 70,
+            "reps": 12,
+            "sets": 3,
+            "note": "前回テーブル値60lbから10lb増。要確認"
+          },
+          {
+            "name": "ケーブルリストカール",
+            "weight_lbs": 60,
+            "reps": 12,
+            "sets": 3,
+            "note": "前回テーブル値55lbから5lb増。要確認"
+          }
+        ],
+        "note": "約2.5週間のブランク明けのセット2実施（issue 21）"
+      },
+      {
+        "date": "2026-10-13",
+        "session": 55,
+        "set": 3,
+        "exercises": [
+          {
+            "name": "ケーブルインクラインプレス",
+            "weight_lbs": 50,
+            "reps": 12,
+            "sets": 3,
+            "note": "前回テーブル値と同じ"
+          },
+          {
+            "name": "ケーブルシーテッドロウ",
+            "weight_lbs": 120,
+            "reps": 12,
+            "sets": 3,
+            "note": "前回テーブル値と同じ"
+          },
+          {
+            "name": "ケーブルカール",
+            "weight_lbs": 70,
+            "reps": 12,
+            "sets": 3,
+            "note": "前回テーブル値45lbから25lb増。要確認・重要（issue 23）"
+          }
+        ],
+        "note": "セット3の実施"
+      },
+      {
+        "date": "2026-10-14",
+        "session": 56,
+        "set": 4,
+        "exercises": [
+          {
+            "name": "ケーブルスラスター",
+            "weight_lbs": 50,
+            "reps": 12,
+            "sets": 3,
+            "note": "前回テーブル値と同じ"
+          },
+          {
+            "name": "ケーブルロープハンマーカール",
+            "weight_lbs": 100,
+            "reps": 12,
+            "sets": 3,
+            "note": "前回テーブル値と同じ"
+          },
+          {
+            "name": "ケーブルプランクロウ",
+            "weight_lbs": 55,
+            "reps": 12,
+            "sets": 3,
+            "note": "前回テーブル値と同じ"
+          }
+        ],
+        "note": "セット4の実施、重量・回数・セット数に変動なし"
+      },
+      {
+        "date": "2026-10-15",
+        "session": 57,
+        "set": 5,
+        "exercises": [
+          {
+            "name": "ケーブルショルダープレス",
+            "weight_lbs": 50,
+            "reps": 12,
+            "sets": 3,
+            "note": "前回テーブル値と同じ"
+          },
+          {
+            "name": "ケーブルパロフプレス",
+            "weight_lbs": 55,
+            "reps": 12,
+            "sets": 3,
+            "note": "前回テーブル値と同じ"
+          },
+          {
+            "name": "ダンベルスタンディングカーフレイズ",
+            "weight_lbs": 50,
+            "reps": 20,
+            "sets": 3,
+            "note": "前回テーブル値と同じ・上限"
+          }
+        ],
+        "note": "セット5の実施、重量・回数・セット数に変動なし。ランニングは高強度（再起点）を10.3／6.3mphで実施（issue 22解決）。体重64.5kg（issue 17）"
+      },
+      {
+        "date": "2026-10-16",
+        "session": 58,
+        "set": 6,
+        "exercises": [
+          {
+            "name": "ケーブルオーバーヘッドトライセプスエクステンション",
+            "weight_lbs": 80,
+            "reps": 12,
+            "sets": 3,
+            "note": "前回テーブル値70lbから10lb増。要確認（issue 24）"
+          },
+          {
+            "name": "ケーブルサイドレイズ",
+            "weight_lbs": 30,
+            "reps": 12,
+            "sets": 3,
+            "note": "前回テーブル値と同じ"
+          },
+          {
+            "name": "ケーブルリバースリストカール",
+            "weight_lbs": 55,
+            "reps": 12,
+            "sets": 3,
+            "note": "前回テーブル値と同じ"
+          }
+        ],
+        "note": "セット6の実施。ランニングは低強度（1日目）を10.3／6.3mphで実施、基準値と同じ。体重64.95kg（issue 17）"
+      },
+      {
+        "date": "2026-10-19",
+        "session": 59,
+        "set": 7,
+        "exercises": [
+          {
+            "name": "ダンベルウォーキングランジ",
+            "weight_lbs": 35,
+            "reps": 12,
+            "sets": 3,
+            "note": "前回と同じ・確定済み"
+          },
+          {
+            "name": "ダンベルヒップスラスト",
+            "weight_lbs": 45,
+            "reps": 12,
+            "sets": 3,
+            "note": "前回と同じ・確定済み"
+          },
+          {
+            "name": "ケーブルシュラッグ",
+            "weight_lbs": 120,
+            "reps": 12,
+            "sets": 3,
+            "note": "前回の4セットから3セットに戻った。テンプレート未変更の可能性あり・要確認（issue 9）"
+          }
+        ],
+        "note": "セット7の3回目実施。ランニングは実施速度が未入力で記録なし（issue 25）。体重65.3kg（issue 17）"
+      },
+      {
+        "date": "2026-10-20",
+        "session": 60,
+        "set": 8,
+        "exercises": [
+          {
+            "name": "ケーブルデッドリフト",
+            "weight_lbs": 120,
+            "reps": 12,
+            "sets": 3,
+            "note": "前回テーブル値100lbから20lb増。要確認・重要（issue 18）"
+          },
+          {
+            "name": "ケーブルウッドチョッパー",
+            "weight_lbs": 60,
+            "reps": 12,
+            "sets": 3,
+            "note": "前回テーブル値と同じ"
+          },
+          {
+            "name": "ケーブルグッドモーニング",
+            "weight_lbs": 110,
+            "reps": 12,
+            "sets": 3,
+            "note": "前回テーブル値と同じ"
+          }
+        ],
+        "note": "セット8の3回目実施。ランニングは低強度（2日目）を10.3／6.3mphで実施、基準値と同じ（issue 25解決）。体重65.2kg（issue 17）"
+      },
+      {
+        "date": "2026-10-22",
+        "session": 61,
+        "set": 1,
+        "exercises": [
+          {
+            "name": "ケーブルチェストプレス",
+            "weight_lbs": 45,
+            "reps": 12,
+            "sets": 3,
+            "note": "前回と完全一致・安定"
+          },
+          {
+            "name": "ケーブルトライセプスプッシュダウン",
+            "weight_lbs": 90,
+            "reps": 12,
+            "sets": 3,
+            "note": "前回と完全一致・安定"
+          },
+          {
+            "name": "ケーブルクランチ",
+            "weight_lbs": 120,
+            "reps": 12,
+            "sets": 3,
+            "note": "前回と完全一致・安定"
+          }
+        ],
+        "note": "セット1の実施、異常な変動なし。ランニングは実施速度が未入力で記録なし（issue 26）。体重64.8kg（issue 17）"
+      },
+      {
+        "date": "2026-10-22",
+        "session": 62,
+        "set": 2,
+        "exercises": [
+          {
+            "name": "ダンベルスクワット",
+            "weight_lbs": 50,
+            "reps": 12,
+            "sets": 3,
+            "note": "前回と同じ・上限"
+          },
+          {
+            "name": "ケーブルRDL／プルスルー",
+            "weight_lbs": 110,
+            "reps": 12,
+            "sets": 3,
+            "note": "前回70lbから40lb増（約57%）。要確認・重要（issue 27）"
+          },
+          {
+            "name": "ケーブルリストカール",
+            "weight_lbs": 60,
+            "reps": 8,
+            "sets": 3,
+            "note": "重量は前回と同じ60lb（110lbは入力ミスで訂正）。回数は12回から8回に減少・要確認（issue 27）"
+          }
+        ],
+        "note": "セット2の実施（同日2回目の送信）。ランニングは実施速度が2回連続で未入力のため記録なし（issue 26）。体重64.5kg（issue 17）"
+      }
+    ]
+  }
+}
